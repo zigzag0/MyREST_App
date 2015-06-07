@@ -46,7 +46,7 @@ function get_book(id) {
 
 }
 
-function save_car() {
+function save_book() {
 
 	book_from_server.name = document.forms[0].name.value;
 	book_from_server.author = document.forms[0].author.value;
@@ -76,23 +76,23 @@ function save_car() {
 function display_book(book) {
 	var out_data = "";
 	out_data = out_data
-			+ "<table bgcolor=eeeeee><tr><td>Muutmine. Auto id: <b>" + book.id
+			+ "<table bgcolor=eeeeee><tr><td>Muutmine. Raamat id: <b>" + book.id
 			+ "</b></td></tr>";
 
 	out_data = out_data
-			+ "<tr><td>Mark:</td><td><input type=text name=name value='"
+			+ "<tr><td>Nimetus:</td><td><input type=text name=name value='"
 			+ book.name + "'></td></tr>";
 	out_data = out_data
-			+ "<tr><td>Mudel:</td><td><input type=text name=author value='"
+			+ "<tr><td>Autor:</td><td><input type=text name=author value='"
 			+ book.author + "'></td></tr>";
 	out_data = out_data
-			+ "<tr><td>Seeria:</td><td><input type=text name=pages value='"
+			+ "<tr><td>Lehekülgi:</td><td><input type=text name=pages value='"
 			+ book.pages + "'></td></tr>";
 	out_data = out_data
-			+ "<tr><td>Aasta:</td><td><input type=text name=published value='"
+			+ "<tr><td>Väljatrük:</td><td><input type=text name=published value='"
 			+ book.published + "'></td></tr>";
 	out_data = out_data
-			+ "<td><button type='button' class='btn'  onClick='javascript:save_car()'>Salvesta</button></td>";
+			+ "<td><button type='button' class='btn'  onClick='javascript:save_book()'>Salvesta</button></td>";
 
 	out_data = out_data + "</table>";
 
@@ -102,7 +102,7 @@ function display_book(book) {
 function display_books(data) {
 	var out_data = "";
 	out_data = out_data
-			+ "<table bgcolor=eeeeee><tr><td colspan=4>Autosid kokku: <b>"
+			+ "<table bgcolor=eeeeee><tr><td colspan=4>Raamatud kokku: <b>"
 			+ data.length + "</b></td></tr>";
 	for ( var i in data) {
 		var book = data[i];
@@ -132,7 +132,7 @@ function delete_book(id) {
 		type : "DELETE",
 		contentType : 'application/json',
 		success : function(data) {
-			show_message("Kustutatud");
+			show_message("Edukalt kustutatud");
 			// uuendame autode nimekirja vormil , yks auto on nyyd kustutatud
 			get_books();
 			console.log(JSON.stringify(data));
@@ -146,8 +146,8 @@ function add_book() {
 	var book_to_server = new Book();
 	book_to_server.name = document.forms[0].new_book_name.value;
 	book_to_server.author = document.forms[0].new_book_author.value;
-	book_to_server.pages = document.forms[0].new_car_pages.value;
-	book_to_server.published = document.forms[0].new_car_published.value;
+	book_to_server.pages = document.forms[0].new_book_pages.value;
+	book_to_server.published = document.forms[0].new_book_published.value;
 	var jsonData = JSON.stringify(book_to_server);
 	$.ajaxSetup({
 		cache : false

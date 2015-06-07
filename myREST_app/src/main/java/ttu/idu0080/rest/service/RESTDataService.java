@@ -22,7 +22,7 @@ public class RESTDataService  {
 		{
 			RestTemplate restTemplate = new RestTemplate();
 		book_array = restTemplate.getForObject("http://localhost:8080/REST_service/service/books", Book[].class) ;
-		System.out.println("Autosid REST-teenusest:" + book_array.length);
+		System.out.println("Raamatud REST-teenusest:" + book_array.length);
 		}
 		catch(Exception ex)
 		{

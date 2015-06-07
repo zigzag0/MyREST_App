@@ -14,64 +14,62 @@
 </head>
 <body>
 	<h1>REST World!</h1>
-	<a href=${uri}>Autoleht</a>
+	<h2>
+		<a href=${uri}>Raamatud.</a>
+	</h2>
 	<form>
-		<input type=button value="Koik autod" onClick="javascript:get_books()">
-
-
-		<br> <br>
+		<input type=button value="Kõikide raamatute nimekiri."
+			onClick="javascript:get_books()"> <br> <br> <br>
 		<table bgcolor=000000>
 			<tr>
-				<td bgcolor=cccccc>Teated</td>
-			</tr>
-			<tr>
+				<td bgcolor=cccccc>Tesde:</td>
 				<td bgcolor=ffffff><div id="msg_text"></div></td>
 			</tr>
+			<br>
+			<tr>
+				<br>
+				<input type="text" name="search">
+				<input type=button value="Raamatu otsing"
+					onClick="javascript:search()">
+				<br>
+			</tr>
+			<br>
 		</table>
-		<br>
-		<div id="one_book"></div>
-		<br> <br>
-		<div id="books_table"></div>
-		<br>
-		<br>
-
-
-
-
-		<! -- samm 4 Uue auto lisamise võimalus. -->
+		<br> <br> <br>
+		<! -- samm 4 Uue raamatu lisamise võimalus. -->
 		<table bgcolor=eeeeee>
 			<tr>
-				<td>Uue auto lisamine</td>
+				<td>Uue raamatu lisamine</td>
 			</tr>
 			<tr>
-				<td>Mark:</td>
+				<td>Nimetus:</td>
 				<td><input type=text name=new_book_name value=''></td>
 			</tr>
 			<tr>
-				<td>Mudel:</td>
+				<td>Autor:</td>
 				<td><input type=text name=new_book_author value=''></td>
 			</tr>
 			<tr>
-				<td>Seeria:</td>
-				<td><input type=text name=new_car_pages value=''></td>
+				<td>Lehekülgi:</td>
+				<td><input type=text name=new_book_pages value=''></td>
 			</tr>
 			<tr>
-				<td>Aasta:</td>
-				<td><input type=text name=new_car_published value=''></td>
+				<td>Väljatrük:</td>
+				<td><input type=text name=new_book_published value=''></td>
 			</tr>
 			<tr>
-				<td><button type='button' class='btn' onClick='javascript:add_book()'>Saada uus serverile</button></td>
+				<td><button type='button' class='btn'
+						onClick='javascript:add_book()'>Salvesta uue raamatu.</button></td>
 			</tr>
 		</table>
-<br>
-<br>
-<input type="text" name="search">
-				<input type=button value="Otsing"
-			onClick="javascript:search()">
-			<br>
+		<br> <br> <br>
+		<div id="one_book"></div>
+		<br> <br>
+		<div id="books_table"></div>
+		<br> <br>
 
-		<br>
-		<br>
+
+
 
 
 
