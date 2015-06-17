@@ -1,22 +1,21 @@
 package ttu.idu0080.rest.service;
 
-import ttu.idu0080.rest.data.*;
-
-import java.util.*;
-import java.text.*;
+import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.stereotype.Service;;
+
+import ttu.idu0080.rest.data.Book;
 @Service
 public class RESTDataService  {
 
 
 
-	
-	
+
+
 	public List<Book> getAllBooks()  {
-		
+
 		Book[] book_array = null;
 		try
 		{
@@ -33,7 +32,7 @@ public class RESTDataService  {
 		return book_list;
 	}
 
-	
-	
-	
+
+
+
 }

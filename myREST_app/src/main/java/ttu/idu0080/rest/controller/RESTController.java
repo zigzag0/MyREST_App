@@ -1,29 +1,23 @@
 package ttu.idu0080.rest.controller;
 
 import java.io.IOException;
-
-import java.util.*;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.transaction.annotation.Transactional;
 
-import org.springframework.ui.Model;
-
-import ttu.idu0080.rest.service.*;
-import ttu.idu0080.rest.data.*;
+import ttu.idu0080.rest.data.Book;
+import ttu.idu0080.rest.service.DataService;
+import ttu.idu0080.rest.service.RESTDataService;
 
 @Controller
 public class RESTController {
@@ -69,7 +63,7 @@ public class RESTController {
 		dataService.delete(id);
 	}
 
-	// samm 6 lisame Auto lisamise võimalust
+	// samm 6 lisame Auto lisamise vï¿½imalust
 	@Transactional
 	@RequestMapping(value = "/service/book/", method = RequestMethod.PUT)
 	public @ResponseBody void insertBook(@RequestBody Book book) {
